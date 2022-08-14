@@ -8,36 +8,36 @@ const Product = ({ data, deleteHandle, increment, decrement }) => {
 
   return (
     <Container>
-      <Card className='m-5 5 p-5'>
-        {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-        <Card.Body className="d-flex flex-row align-items-center justify-content-between">
-          <Card.Title>{title}</Card.Title>
+      <Card className="m-5 5 p-5 shadow-sm">
+        <Card.Body className="d-flex flex-md-row align-items-center justify-content-between flex-column">
+          <Card.Title className="fw-bold">{title}</Card.Title>
           <Card.Text>
-            Price= $
-            {`${price}*${quantity}= ${(price * quantity).toLocaleString()}`}
+            $
+            {quantity > 1
+              ? `${price}*${quantity}= ${(price * quantity).toLocaleString()}`
+              : price}
           </Card.Text>
           <Card.Text>{quantity}</Card.Text>
-          <div>
+          <div className="mb-5 mb-md-0">
             <span
+              className="text-danger"
               onClick={
                 quantity !== 1 ? () => decrement(id) : () => deleteHandle(id)
               }
             >
-              {quantity === 1 ? (
-                <FaTrashAlt className="text-danger" />
-              ) : (
-                <FaMinus />
-              )}
+              {quantity === 1 ? <FaTrashAlt /> : <FaMinus />}
             </span>
 
-            <span onClick={() => increment(id)}>
-              <IoMdAddCircle />
-            </span>
+            <IoMdAddCircle
+              onClick={() => increment(id)}
+              className="text-success"
+            />
           </div>
 
-          <span className="text-danger" onClick={() => deleteHandle(id)}>
-            <FaTrashAlt />
-          </span>
+          <FaTrashAlt
+            className="text-danger"
+            onClick={() => deleteHandle(id)}
+          />
         </Card.Body>
       </Card>
     </Container>
