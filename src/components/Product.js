@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({ data }) => {
+const Product = ({ data, deleteHandle, increment, decrement }) => {
   const { title, id, price, quantity } = data;
   return (
     <div>
@@ -8,17 +8,26 @@ const Product = ({ data }) => {
         <h2>{title}</h2>
       </div>
       <div>
-        <span>{price}</span>
+        <span>
+          Price= $
+          {`${price}*${quantity}= ${(price * quantity).toLocaleString()}`}
+        </span>
       </div>
       <div>
         <span>{quantity}</span>
       </div>
       <div>
-        <button>-</button>
-        <button>+</button>
+        <button
+          onClick={
+            quantity !== 1 ? () => decrement(id) : () => deleteHandle(id)
+          }
+        >
+          {quantity === 1 ? "delete" : "-"}
+        </button>
+        <button onClick={() => increment(id)}>+</button>
       </div>
       <div>
-        <button>Delete</button>
+        <button onClick={() => deleteHandle(id)}>Delete</button>
       </div>
     </div>
   );
