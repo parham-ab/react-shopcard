@@ -12,6 +12,10 @@
 a {
   color: inherit;
 }
+svg {
+  font-size: 25px;
+  cursor: pointer;
+}
 // bootstrap outline
 textarea:hover,
 textarea:active,
@@ -32,3 +36,22 @@ label:focus,
   -webkit-appearance: none;
   box-shadow: none !important;
 }
+// scroll bar
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(158, 158, 158);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(187, 187, 187);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(207, 207, 207);
+}
+// bootstrap styles
+@import "~bootstrap/scss/bootstrap";
