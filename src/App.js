@@ -1,11 +1,13 @@
 // components
 import ProductsList from "./components/ProductsList";
+// context
+import ProductContextProvider from "./contexts/providers/ProductContextProvider";
 
 const App = () => {
   return (
-    <div>
+    <ProductContextProvider>
       <ProductsList />
-    </div>
+    </ProductContextProvider>
   );
 };
 

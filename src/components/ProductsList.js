@@ -1,28 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+// context
+import { ProductsContext } from "../contexts/providers/ProductContextProvider";
 // components
 import Product from "./Product";
 
 const ProductsList = () => {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      title: "iphone12",
-      price: 999,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      title: "iphone13",
-      price: 1800,
-      quantity: 1,
-    },
-    {
-      id: 3,
-      title: "iphone14",
-      price: 2000,
-      quantity: 1,
-    },
-  ]);
+  const { products, setProducts } = useContext(ProductsContext);
+  console.log(products);
   // delete handler
   const deleteHandle = (id) => {
     const filteredItems = products.filter((item) => item.id !== id);
