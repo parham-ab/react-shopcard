@@ -12,13 +12,13 @@ const ProductContextProvider = ({ children }) => {
     },
     {
       id: 2,
-      title: "iphone13",
+      title: "airpod",
       price: 1800,
       quantity: 1,
     },
     {
       id: 3,
-      title: "iphone14",
+      title: "macbook pro",
       price: 2000,
       quantity: 1,
     },

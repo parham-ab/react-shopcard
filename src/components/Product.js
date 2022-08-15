@@ -7,14 +7,14 @@ const Product = ({ data, deleteHandle, increment, decrement }) => {
   const { title, id, price, quantity } = data;
 
   return (
-    <Container>
-      <Card className="m-5 5 p-5 shadow-sm">
+    <Container className="py-2">
+      <Card className="mt-5 5 p-5 shadow-sm">
         <Card.Body className="d-flex flex-md-row align-items-center justify-content-between flex-column">
           <Card.Title className="fw-bold">{title}</Card.Title>
           <Card.Text>
             $
             {quantity > 1
-              ? `${price}*${quantity}= ${(price * quantity).toLocaleString()}`
+              ? `${price}*${quantity}= $${(price * quantity).toLocaleString()}`
               : price}
           </Card.Text>
           <Card.Text>{quantity}</Card.Text>
