@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { FaShoppingBasket } from "react-icons/fa";
 // context
 import { ProductsContext } from "../contexts/providers/ProductContextProvider";
+import Filter from "./Filter";
 // components
 import Product from "./Product";
 
@@ -36,6 +37,7 @@ const ProductsList = () => {
             onChange={(e) => setSearchedTxt(e.target.value)}
             placeholder="Search..."
           />
+          <Filter />
           <Navbar.Text className="text-white">
             <FaShoppingBasket />
             <sup>

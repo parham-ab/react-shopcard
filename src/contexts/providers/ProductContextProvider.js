@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 // fake data
 import { productDataList } from "../../database/productDataList";
 // context
@@ -31,7 +31,16 @@ const reducer = (state, action) => {
     case "DELETE":
       const filteredItems = state.filter((item) => item.id !== action.id);
       return filteredItems;
-
+    case "FILTER":
+      const value = action.selectedVal.value;
+      if (value === "") {
+        return productDataList;
+      } else {
+        const filteredItems = state.filter(
+          (item) => item.sizes.indexOf(value) >= 0
+        );
+        return filteredItems;
+      }
     default:
       return state;
   }

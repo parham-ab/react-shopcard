@@ -4,7 +4,7 @@ export const productDataList = [
     title: "Fjallraven",
     quantity: 1,
     price: "$249.21",
-    sizes: ["X", "XXL"],
+    sizes: ["L", "XXL"],
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ export const productDataList = [
     title: "Solid Gold",
     quantity: 1,
     price: "$352.37",
-    sizes: ["X", "XXL", "XL", "M"],
+    sizes: ["L", "XXL", "XL", "M"],
   },
   {
     id: 7,
@@ -53,20 +53,20 @@ export const productDataList = [
     title: "British Cap",
     quantity: 1,
     price: "$131.06",
-    sizes: ["X", "XL", "M", "S"],
+    sizes: ["L", "XL", "M", "S"],
   },
   {
     id: 9,
     title: "Polo Shirts",
     quantity: 1,
     price: "$300.53",
-    sizes: ["X", "XXL", "M", "S"],
+    sizes: ["L", "XXL", "M", "S"],
   },
   {
     id: 10,
     title: "Zara jeans",
     quantity: 1,
     price: "$87.14",
-    sizes: ["X", "XXL", "XL", "S"],
+    sizes: ["L", "XXL", "XL", "S"],
   },
 ];
