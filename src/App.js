@@ -1,3 +1,4 @@
+import ScrollToTop from "react-scroll-to-top";
 // components
 import ProductsList from "./components/ProductsList";
 // context
@@ -7,6 +8,7 @@ const App = () => {
   return (
     <ProductContextProvider>
       <ProductsList />
+      <ScrollToTop smooth top={200} color="#111" />
     </ProductContextProvider>
   );
 };

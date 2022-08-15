@@ -48,7 +48,8 @@ const ProductsList = () => {
         </Container>
       </Navbar>
       <Container className="mt-5">
-        <div className="pt-5 col-12 col-md-3">
+        <div className="pt-5 col-12 col-md-3 m-auto">
+          <p className='text-secondary'>Filter based on size:</p>
           <Filter />
         </div>
         {filteredWord.map((item) => (
