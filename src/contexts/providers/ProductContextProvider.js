@@ -36,7 +36,7 @@ const reducer = (state, action) => {
       if (value === "") {
         return productDataList;
       } else {
-        const filteredItems = state.filter(
+        const filteredItems = productDataList.filter(
           (item) => item.sizes.indexOf(value) >= 0
         );
         return filteredItems;
