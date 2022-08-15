@@ -37,7 +37,6 @@ const ProductsList = () => {
             onChange={(e) => setSearchedTxt(e.target.value)}
             placeholder="Search..."
           />
-          <Filter />
           <Navbar.Text className="text-white">
             <FaShoppingBasket />
             <sup>
@@ -49,6 +48,9 @@ const ProductsList = () => {
         </Container>
       </Navbar>
       <Container className="mt-5">
+        <div className="pt-5 col-12 col-md-3">
+          <Filter />
+        </div>
         {filteredWord.map((item) => (
           <Product
             key={item.id}

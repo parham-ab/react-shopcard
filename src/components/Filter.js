@@ -1,8 +1,9 @@
 // context
 import { useContext, useState } from "react";
+import Select from "react-select";
+// context
 import { ProductsContext } from "../contexts/providers/ProductContextProvider";
 
-import Select from "react-select";
 const options = [
   { value: "", label: "ALL" },
   { value: "S", label: "S" },
@@ -13,20 +14,19 @@ const options = [
 ];
 
 const Filter = () => {
-  const [value, setValue] = useState("");
+  const [sizeVal, setSizeVal] = useState("");
   // context
-  const { products, dispatch } = useContext(ProductsContext);
+  const { dispatch } = useContext(ProductsContext);
 
   const changeHandle = (selectedVal) => {
-    console.log(selectedVal);
     dispatch({ type: "FILTER", selectedVal });
-    setValue(selectedVal);
+    setSizeVal(selectedVal);
   };
 
   return (
-    <div>
-      <Select value={value} options={options} onChange={changeHandle} />
-    </div>
+    <>
+      <Select options={options} value={sizeVal} onChange={changeHandle} />
+    </>
   );
 };
 
