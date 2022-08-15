@@ -10,32 +10,13 @@ import Product from "./Product";
 
 const ProductsList = () => {
   // context
-  const { products, setProducts } = useContext(ProductsContext);
+  const { products, dispatch } = useContext(ProductsContext);
   // search
   const [searchedTxt, setSearchedTxt] = useState("");
   // searchHandle
   const filteredWord = products.filter((item) =>
     item.title.toLowerCase().includes(searchedTxt.toLowerCase())
   );
-  // delete handler
-  const deleteHandle = (id) => {
-    const filteredItems = products.filter((item) => item.id !== id);
-    setProducts(filteredItems);
-  };
-  // increment button
-  const increment = (id) => {
-    const intendedIndex = products.findIndex((item) => item.id === id);
-    const intendedProduct = products[intendedIndex];
-    intendedProduct.quantity++;
-    setProducts([...products]);
-  };
-  // decrement button
-  const decrement = (id) => {
-    const intendedIndex = products.findIndex((item) => item.id === id);
-    const intendedProduct = products[intendedIndex];
-    intendedProduct.quantity--;
-    setProducts([...products]);
-  };
   // total products
   const totalProducts = products.map((item) => item.quantity);
   const sumProducts = totalProducts.reduce((previous, current) => {
@@ -70,9 +51,9 @@ const ProductsList = () => {
           <Product
             key={item.id}
             data={item}
-            deleteHandle={deleteHandle}
-            increment={increment}
-            decrement={decrement}
+            deleteHandle={() => dispatch({ type: "DELETE", id: item.id })}
+            increment={() => dispatch({ type: "INCREMENT", id: item.id })}
+            decrement={() => dispatch({ type: "DECREMENT", id: item.id })}
           />
         ))}
       </Container>
