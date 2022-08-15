@@ -12,9 +12,10 @@ const Product = ({ data, deleteHandle, increment, decrement }) => {
         <Card.Body className="d-flex flex-md-row align-items-center justify-content-between flex-column">
           <Card.Title className="fw-bold">{title}</Card.Title>
           <Card.Text>
-            $
             {quantity > 1
-              ? `${price}*${quantity}= $${(price * quantity).toLocaleString()}`
+              ? `${price}*${quantity}= $${(
+                  +price.split("$")[1] * quantity
+                ).toLocaleString()}`
               : price}
           </Card.Text>
           <Card.Text>{quantity}</Card.Text>

@@ -1,27 +1,10 @@
 import React, { useReducer, useState } from "react";
+// fake data
+import { productDataList } from "../../database/productDataList";
 // context
 export const ProductsContext = React.createContext();
 
-const initialState = [
-  {
-    id: 1,
-    title: "iphone12",
-    price: 999,
-    quantity: 1,
-  },
-  {
-    id: 2,
-    title: "airpod",
-    price: 1800,
-    quantity: 1,
-  },
-  {
-    id: 3,
-    title: "macbook pro",
-    price: 2000,
-    quantity: 1,
-  },
-];
+const initialState = productDataList;
 
 const reducer = (state, action) => {
   switch (action.type) {
